@@ -3,7 +3,7 @@ package common
 import shapeless.{Generic, HList}
 
 /** Evidence that `A` can be parsed from `Array[String]`. */
-trait Parseable[A] {
+trait Parser[A] {
 
   /**
     * Parse a list of arguments.
@@ -12,41 +12,41 @@ trait Parseable[A] {
     */
   def parse(args: Iterator[String]): A
 
-  def and[B](p: Parseable[B]): Parseable[(A, B)] = {
-    Parseable.instance { args =>
+  def and[B](p: Parser[B]): Parser[(A, B)] = {
+    Parser.instance { args =>
       val a = this.parse(args)
       val b = p.parse(args)
       (a, b)
     }
   }
 
-  def map[B](f: A => B): Parseable[B] =
-    Parseable.instance(args => f(this.parse(args)))
+  def map[B](f: A => B): Parser[B] =
+    Parser.instance(args => f(this.parse(args)))
 }
 
-object Parseable extends Instances {
+object Parser extends Instances {
   // TODO: always flatten tuple
   implicit def tuple2CaseClass[A, B <: Product, Repr <: HList](
-    p: Parseable[A]
+    p: Parser[A]
   )(implicit
     ga: Generic.Aux[A, Repr],
     gb: Generic.Aux[B, Repr]
-  ): Parseable[B] = {
+  ): Parser[B] = {
     p.map(a => gb.from(ga.to(a)))
   }
 }
 
 trait Instances {
 
-  def instance[A](f: Iterator[String] => A): Parseable[A] = {
-    new Parseable[A] {
+  def instance[A](f: Iterator[String] => A): Parser[A] = {
+    new Parser[A] {
       override def parse(args: Iterator[String]): A = f(args)
     }
   }
 
-  implicit def int: Parseable[Int] =
+  implicit def int: Parser[Int] =
     instance(_.next.toInt)
 
-  implicit def intArray: Parseable[Array[Int]] =
+  implicit def intArray: Parser[Array[Int]] =
     instance(_.next.split(' ').map(_.toInt))
 }

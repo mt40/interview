@@ -1,6 +1,6 @@
 package common
 
-abstract class Question[In : Parseable, Out] {
+abstract class Question[In : Parser, Out] {
 
   def main(args: Array[String]): Unit = {
     runMain(args)
@@ -11,7 +11,7 @@ abstract class Question[In : Parseable, Out] {
     * Typically used by tests.
     */
   final def runMain(args: Array[String]): Out = {
-    run(implicitly[Parseable[In]].parse(args.iterator))
+    run(implicitly[Parser[In]].parse(args.iterator))
   }
 
   def run(input: In): Out
