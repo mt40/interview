@@ -1,17 +1,12 @@
-import common.{Parser, Question}
+import common.Solution
 
-/** Search for `x` in `arr`. */
-case class Input(arr: Array[Int], x: Int)
+class BinarySearch extends Solution {
 
-object Input {
-  implicit def p: Parser[Input] = {
-    import Parser._
-    intArray and int
+  def main(args: Array[String]): Unit = {
+    run(parseIntArray(args(0)), parseInt(args(1)))
   }
-}
 
-class BinarySearch extends Question[Input, Array[Int]] {
-  override def run(in: Input): Array[Int] = {
-    in.arr
+  def run(arr: Array[Int], x: Int): Int = {
+    1
   }
 }
