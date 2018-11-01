@@ -23,10 +23,10 @@ class BubbleSort extends Sorting {
   final def bubbleSort[A](arr: Array[A])(implicit ord: Ordering[A]): Array[A] = {
     var stop = true
     var bound = arr.length // we don't need to care about elements after this index
-    for(i <- 1 until bound) {
+    for (i <- 1 until bound) {
       val a1 = arr(i - 1)
       val a2 = arr(i)
-      if(ord.lt(a2, a1)) {
+      if (ord.lt(a2, a1)) {
         // swap
         val tmp = arr(i - 1)
         arr(i - 1) = arr(i)
@@ -35,6 +35,6 @@ class BubbleSort extends Sorting {
       }
       bound -= 1
     }
-    if(stop) arr else bubbleSort(arr)
+    if (stop) arr else bubbleSort(arr)
   }
 }

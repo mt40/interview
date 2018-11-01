@@ -13,7 +13,7 @@ class BinarySearchGeneric {
 
   @tailrec
   final def binSearch[A](arr: Array[A], x: A, low: Int, hi: Int)(implicit ord: Ordering[A]): Int = {
-    if(hi < low) {
+    if (hi < low) {
       low
     }
     else {

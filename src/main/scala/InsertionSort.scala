@@ -16,8 +16,8 @@ class InsertionSort extends Sorting {
   }
 
   def insertionSort[A](arr: Array[A])(implicit ord: Ordering[A]): Array[A] = {
-    for(i <- 1 until arr.length) {
-      for(j <- i to 1 by -1 if ord.lt(arr(j), arr(j - 1))) {
+    for (i <- 1 until arr.length) {
+      for (j <- i to 1 by -1 if ord.lt(arr(j), arr(j - 1))) {
         val tmp = arr(j)
         arr(j) = arr(j - 1)
         arr(j - 1) = tmp

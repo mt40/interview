@@ -13,7 +13,7 @@ class BinarySearch {
 
   @tailrec
   final def binSearch(arr: Array[Int], x: Int, low: Int, hi: Int): Int = {
-    if(hi < low) {
+    if (hi < low) {
       low
     }
     else {
