@@ -1,4 +1,4 @@
-import common.Sorting
+package sorting
 
 /**
   * Sorts a given array by recursively dividing the array by half

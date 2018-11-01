@@ -1,4 +1,4 @@
-import common.Sorting
+package sorting
 
 import scala.annotation.tailrec
 

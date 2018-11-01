@@ -1,3 +1,5 @@
+package searching
+
 class BinarySearchGenericSuite extends BinarySearchSuite {
 
   private def testCase[A : Ordering](a: Array[A], x: A, expect: Int): Unit = {

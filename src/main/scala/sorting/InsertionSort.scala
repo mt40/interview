@@ -1,4 +1,4 @@
-import common.Sorting
+package sorting
 
 /**
   * Sorts a given array by moving each element to its correct position
@@ -7,6 +7,7 @@ import common.Sorting
   * Best: O(n) (already sorted)
   * Worst & average: O(n^2)
   *
+ *
   * @see https://en.wikipedia.org/wiki/Insertion_sort
   */
 class InsertionSort extends Sorting {

@@ -1,4 +1,4 @@
-import common.Sorting
+package sorting
 
 import scala.annotation.tailrec
 
@@ -11,7 +11,7 @@ import scala.annotation.tailrec
   * Worst & average: O(n^2)
   *
   *
-  * @see https://github.com/vkostyukov/scalacaster/blob/master/src/sort/InsertionSort.scala
+  * @see https://github.com/vkostyukov/scalacaster/blob/master/src/sort/sorting.InsertionSort.scala
   */
 class InsertionSortFn extends Sorting {
   override def sort[A : Ordering](arr: Array[A]): Seq[A] = {

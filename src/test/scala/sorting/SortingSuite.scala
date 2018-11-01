@@ -1,4 +1,6 @@
-package common
+package sorting
+
+import common.SolutionSuite
 
 abstract class SortingSuite extends SolutionSuite {
   protected def sortMethod: Sorting

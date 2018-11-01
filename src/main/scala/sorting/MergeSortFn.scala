@@ -1,4 +1,4 @@
-import common.Sorting
+package sorting
 
 import scala.annotation.tailrec
 
@@ -11,7 +11,7 @@ import scala.annotation.tailrec
   *
   * Best, worst & avg: O(n logn)
   *
-  * @see https://github.com/vkostyukov/scalacaster/blob/master/src/sort/MergeSort.scala
+  * @see https://github.com/vkostyukov/scalacaster/blob/master/src/sort/sorting.MergeSort.scala
   */
 class MergeSortFn extends Sorting {
   override def sort[A : Ordering](arr: Array[A]): Seq[A] = {

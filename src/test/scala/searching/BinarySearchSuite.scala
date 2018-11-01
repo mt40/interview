@@ -1,3 +1,5 @@
+package searching
+
 import common.SolutionSuite
 
 class BinarySearchSuite extends SolutionSuite {
