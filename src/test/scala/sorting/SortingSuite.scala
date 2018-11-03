@@ -16,6 +16,7 @@ abstract class SortingSuite extends SolutionSuite {
     Array(10, 1, -4),
     Array(10, 10, -4, -4),
     Array(4, 9, 0, 30, -10, 2, 0),
+    Array(4, 7, 0, 9, -10, 2, 0),
     Array(9, 1, 2, 0)
   )
 
