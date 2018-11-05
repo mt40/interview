@@ -1,0 +1,4 @@
+language: scala
+scala:
+  - 2.12.7
+sbt_args: -v -J-Xss2m
