@@ -1,4 +1,4 @@
-name := "interview"
+name := "scala_interview"
 
 version := "0.1"
 
