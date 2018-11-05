@@ -12,3 +12,5 @@ libraryDependencies ++= Seq(
 // only report failed tests
 // see: http://www.scalatest.org/user_guide/using_the_runner
 testOptions += Tests.Argument("-oCEXD")
+
+Test / parallelExecution := false
