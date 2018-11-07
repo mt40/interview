@@ -5,7 +5,7 @@ version := "0.1"
 scalaVersion := "2.12.7"
 
 libraryDependencies ++= Seq(
-  "com.chuusai" %% "shapeless" % "2.3.3",
+//  "com.chuusai" %% "shapeless" % "2.3.3",
   "org.scalatest" %% "scalatest" % "3.0.5" % "test"
 )
 
@@ -14,3 +14,8 @@ libraryDependencies ++= Seq(
 testOptions += Tests.Argument("-oCEXD")
 
 Test / parallelExecution := false
+
+// Run Scalastyle when running tests
+lazy val testScalastyle = taskKey[Unit]("")
+testScalastyle := (Test / scalastyle).toTask("").value
+(Test / test) := ((Test / test) dependsOn testScalastyle).value
