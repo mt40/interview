@@ -152,6 +152,14 @@ abstract class BST[+A] {
 
     loop(this, Nil)
   }
+
+  /** Returns the maximum width of this tree. */
+  def diameter: Int = {
+    this match {
+      case Leaf               => 0
+      case Branch(_, l, r, _) => math.max(1, l.diameter + r.diameter)
+    }
+  }
 }
 
 object BST {

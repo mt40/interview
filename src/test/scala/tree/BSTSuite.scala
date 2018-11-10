@@ -55,7 +55,7 @@ class BSTSuite extends SolutionSuite {
     }
 
     check(
-      Branch(1, Branch(2), Leaf),
+      Branch(1, Leaf, Branch(2)),
       Branch(1),
       Branch(2),
       expect = 1
@@ -67,5 +67,16 @@ class BSTSuite extends SolutionSuite {
       Branch(12),
       expect = 10
     )
+  }
+
+  test("'diameter'") {
+    def check(tree: BST[_], expect: Int): Unit = {
+      tree.diameter shouldEqual expect
+    }
+
+    check(Leaf, expect = 0)
+    check(Branch(1), expect = 1)
+    check(Branch(1, Branch(-2), Branch(10)), expect = 2)
+    check(Branch(1, Branch(-2), Branch(10, Branch(7))), expect = 2)
   }
 }
