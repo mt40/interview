@@ -19,7 +19,7 @@ class AddTwoNumbersSuite extends SolutionSuite {
     }
 
     def fromInt(i: Int): ListNode = {
-      val start: ListNode = null
+      val start: ListNode = None.orNull
       i.toString.map(_.toString.toInt).foldLeft(start) { (l, next) =>
         val node = new ListNode(next)
         node.next = l
