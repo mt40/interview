@@ -33,6 +33,8 @@ sbt testOnly <question>Suite
 - [Misc][misc]
   - Longest Common Sub-string
   - Longest Common Sub-sequence
+  - Longest Palindromic Sub-string
+  - Is Palindrome
 - [LeetCode problems][leetcode]
   - Median Of Two Sorted Arrays
   - Longest Absolute File Path
