@@ -35,6 +35,7 @@ sbt testOnly <question>Suite
   - Longest Common Sub-sequence
   - Longest Palindromic Sub-string
   - Is Palindrome
+  - Base Conversion
 - [LeetCode problems][leetcode]
   - Median Of Two Sorted Arrays
   - Longest Absolute File Path
