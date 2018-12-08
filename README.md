@@ -36,6 +36,10 @@ sbt testOnly <question>Suite
   - Longest Palindromic Sub-string
   - Is Palindrome
   - Base Conversion
+  - Maximum sum sub-array
+  - Maximum product sub-array
+  - Count sub-array with sum K
+  - Count sub-array with sum in range
 - [LeetCode problems][leetcode]
   - Median Of Two Sorted Arrays
   - Longest Absolute File Path
