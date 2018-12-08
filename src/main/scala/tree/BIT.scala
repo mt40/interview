@@ -44,7 +44,7 @@ class BIT private (val tree: Seq[Int]) {
 
   /**
     * Returns the index of the element that includes the sum at this index.
-    * Basically, we shift the right-most 1-bit to the left
+    * Basically, we add the right most 1-bit.
     * (e.g. 0011 -> 0100, the sum at index 3 is included in index 4)
     */
   private def parentOf(i: Int): Int = i + (i & -i)
