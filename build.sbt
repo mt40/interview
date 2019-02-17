@@ -6,7 +6,8 @@ scalaVersion := "2.12.7"
 
 libraryDependencies ++= Seq(
 //  "com.chuusai" %% "shapeless" % "2.3.3",
-  "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.5" % Test,
+  "org.scalacheck" %% "scalacheck" % "1.13.5" % Test
 )
 
 // only report failed tests
