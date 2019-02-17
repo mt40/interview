@@ -40,6 +40,16 @@ sbt testOnly <question>Suite
   - Maximum product sub-array
   - Count sub-array with sum K
   - Count sub-array with sum in range
+  - GCD
+  - LCM
+  - Fibonacci Stream
+  - Factorial Stream
+  - Combination
+  - Permutation
+  - Permutations of numbers from 0 to N
+  - Permutations of a string
+  - Pascal Triangle
+  - Sort 3 nmbers
 - [LeetCode problems][leetcode]
   - Median Of Two Sorted Arrays
   - Longest Absolute File Path
