@@ -10,4 +10,10 @@ abstract class SolutionSuite extends FunSuite with Matchers with GeneratorDriven
     testCases += 1
     test(s"test $testCases")(f)
   }
+
+  implicit class MatrixOps[A](mat: Seq[Seq[A]]) {
+    override def toString: String = {
+      mat.map(r => s"[${r.mkString(", ")}]").mkString(", ")
+    }
+  }
 }

@@ -1,6 +1,6 @@
 # Misc theory questions
 
-**How does this code works?**
+### How does this code works?
 ```scala
 lazy val factorial: Stream[Long] = 1 #:: factorial.zipWithIndex.map {
   case (f, i) => f * (i + 1)
@@ -13,7 +13,7 @@ In Scala, operators end with ":" is right-associative, this means that `#::` is 
 
 Now in `ConsWrapper`, the 2nd part is passed by name so it is not evaluated immediately, hence the laziness. When a next element is needed, the 2nd part is executed and it returns another stream `S2`. The next element is `S2.head`, which is `1`. As a result, we have `1 #:: 1 #:: S2.tail`. For the next element, `factorial.zipWithIndex.map`, which is `S2.tail`, asks `factorial` for the 2nd element, which is now the 2nd `1` and index `i` is now 1, so we get `2`.
 
-**Given N pairs of parentheses, how many possible combinations of well-formed parentheses?**
+### Given N pairs of parentheses, how many possible combinations of well-formed parentheses?
 
 The answer is [Catalan Number](catalan). Let me explain why.
 
@@ -26,6 +26,14 @@ For example:
 
 If we replace all `(` by `)` and vice versa from `0` to `i`, in total we will have `n + 1` `(` and `n - 1` `)`. This is true for any `i`. Hence, the number of ways to place `n + 1` `(` is the number of invalid combinations. This is exactly `C(2n, n + 1)`.
 
+### Given coordinate of 3 vectices of a rectangle, find the 4th vertex
+
+We can do this by doing [vector addition](vec_add). If we have a rectangle ABCD then sum of vector AB and vector AD is vector AC. Hence, if we have A, B, and D, we can find C.
+
+So we just need to find a pair of perpendicular vectors from the given 3 vertices. It is either (AB, AC) or (AB, BC) or (AC, CB). 2 vectors are perpendicular if their [dot product](vec_dot) is 0.
+
 [cons_wrapper]: https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/Stream$$ConsWrapper.html
 [stream_to_cons_wrapper]: https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/Stream$.html#consWrapper[A](stream:=%3Escala.collection.immutable.Stream[A]):scala.collection.immutable.Stream.ConsWrapper[A]
 [catalan]: https://en.wikipedia.org/wiki/Catalan_number
+[vec_add]: http://mathworld.wolfram.com/VectorAddition.html
+[vec_dot]: https://en.wikipedia.org/wiki/Dot_product#Algebraic_definition
