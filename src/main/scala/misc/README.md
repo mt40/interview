@@ -32,6 +32,9 @@ We can do this by doing [vector addition](vec_add). If we have a rectangle ABCD 
 
 So we just need to find a pair of perpendicular vectors from the given 3 vertices. It is either (AB, AC) or (AB, BC) or (AC, CB). 2 vectors are perpendicular if their [dot product](vec_dot) is 0.
 
+### Why does creating arrays require `ClassTag`?
+<!-- todo -->
+
 [cons_wrapper]: https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/Stream$$ConsWrapper.html
 [stream_to_cons_wrapper]: https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/Stream$.html#consWrapper[A](stream:=%3Escala.collection.immutable.Stream[A]):scala.collection.immutable.Stream.ConsWrapper[A]
 [catalan]: https://en.wikipedia.org/wiki/Catalan_number

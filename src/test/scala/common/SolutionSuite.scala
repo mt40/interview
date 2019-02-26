@@ -16,4 +16,8 @@ abstract class SolutionSuite extends FunSuite with Matchers with GeneratorDriven
       mat.map(r => s"[${r.mkString(", ")}]").mkString(", ")
     }
   }
+
+  implicit class ArrayOps[A](arr: Array[A]) {
+    def prettyString: String = s"[${arr.mkString(", ")}]"
+  }
 }
